@@ -162,7 +162,7 @@ model:
 
 ### 6、配置 ESP32 OTA 地址
 
-需要更改ESP32固件的OTA地址，连接到你自己部署的服务。
+需要<a href="https://icnynnzcwou8.feishu.cn/wiki/JEYDwTTALi5s2zkGlFGcDiRknXf" target="_blank">更改ESP32固件的OTA地址</a>，连接到你自己部署的服务。
 OTA 地址示例：http://你的局域网IP:8080/api/ota
 
 ESP32 固件会通过 OTA 接口获取 WS 地址，无需手动配置：

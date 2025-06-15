@@ -206,3 +206,11 @@ npm run dev
 - 刚绑定的设备，未关联相应的智能体，请使用设备的修改功能，管理具体的智能体信息。
 
 ✅ 完成以上步骤，即可开始使用小智语音交互与控制服务。
+
+## 鸣谢 🙏
+
+项目的开发离不开社区的支持和帮助，在此我们真诚感谢：
+
+- 感谢 [xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server/tree/main) 项目，为本项目的开发提供了关键参考。
+
+欢迎大家提交 Issue 或 PR，一起让项目变得更好！

@@ -5,7 +5,11 @@ spring:
 chat:
   server:
     port: 8082
-    context-path: /server/v1
+    context-path: /xiaozhi/v1
+  client:
+    apiKey: 你的apikey
+    url: 模型服务地址
+    model: 模型名称
 logging:
   pattern:
     # 日志日期格式

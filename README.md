@@ -44,7 +44,7 @@
 - Maven 版本：建议使用 **Apache Maven 3.8+**
 - Node.js（仅用于前端模块编译）：**Node.js 18+**
 
-> 备注：本项目基于 **Java 21** 开发，主要为了使用 **虚拟线程（Virtual Threads）** 提升聊天服务的并发处理能力。相比传统线程，虚拟线程更轻量，可支持大量并发 WebSocket 连接，显著提高系统吞吐量和响应性能。
+> 备注：本项目基于 **Java 21** 开发，主要为了使用 **虚拟线程（Virtual Threads）** 提升聊天服务的并发处理能力。相比传统线程，虚拟线程更轻量，可显著提高系统吞吐量和响应性能。
 
 ## 二、项目技术栈
 
@@ -100,3 +100,108 @@
 | 火山引擎 TTS     | ❌ 收费，有免费额度 | ✅ 双流式支持 | 支持双流，音色丰富、响应快、体验好       |
 
 ## 五、项目部署
+
+### 1、下载源码
+
+使用 Git 克隆项目：
+
+```bash
+git clone https://github.com/78/xiaozhi-server.git
+```
+
+或在 GitHub 页面直接下载 ZIP 包解压也可以。
+
+### 2、启动Redis
+
+本项目基于RuoYi-Vue。该项目依赖 Redis，默认连接本地的 6379 端口，请确保 Redis 已启动。
+
+### 3、创建数据库
+
+- 创建名为 ry-xiaozhi 的 MySQL 数据库；
+- 执行初始化 SQL 脚本：sql/ry-xiaozhi-20250615.sql
+
+### 4、配置数据库连接
+
+修改 xiaozhi-admin 模块中的数据库配置文件, 修改成自己的数据库连接信息。
+路径：src/main/resources/application-druid.yml
+
+```yaml
+# 数据源配置
+spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.cj.jdbc.Driver
+        druid:
+            # 主库数据源
+            master:
+                url: jdbc:mysql://localhost:3306/ry-xiaozhi?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+                username: root
+                password: password
+```
+
+### 5、下载并配置 SenseVoice 模型
+
+本项目使用 SenseVoice 模型做本地语音识别，请下载并配置模型路径
+
+```shell
+# 下载 SenseVoice 模型
+wget https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2
+# 解压
+tar xvf sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2
+rm sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2
+```
+
+修改 xiaozhi-chat/src/main/resources/application.yml，配置模型路径
+
+```yaml
+model:
+  asr:
+    sense-voice:
+      model-dir: /your/local/path/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17
+```
+
+### 6、配置 ESP32 OTA 地址
+
+需要更改ESP32固件的OTA地址，连接到你自己部署的服务。
+OTA 地址示例：http://你的局域网IP:8080/api/ota
+
+ESP32 固件会通过 OTA 接口获取 WS 地址，无需手动配置：
+WebSocket 地址将自动拼接为：ws://你的局域网IP:8082/xiaozhi/v1
+
+### 7、配置 LLM 模型（OpenAI 协议兼容）
+
+LLM模型基于Spring AI框架，目前是写死的OpenAI协议的模型，需要配置支持OpenAI协议模型服务商的信息，如下所示。
+修改 xiaozhi-chat/src/main/resources/application.yml。
+
+```yaml
+chat:
+  client:
+    apiKey: 你的API密钥
+    url: 模型服务地址（如 http://localhost:8000/v1/chat/completions）
+    model: 模型名称（如 gpt-3.5-turbo）
+```
+
+### 8、启动前端后台管理系统
+
+```shell
+cd xiaozhi-ui
+
+# 使用淘宝源加速依赖安装
+npm install --registry=https://registry.npmmirror.com
+
+# 启动前端服务（默认 80 端口）
+npm run dev
+```
+
+访问地址：http://localhost
+默认账号密码：admin / admin123
+
+### 9、启动服务 & 设备激活
+
+后端服务启动后，未注册的设备将通过语音播报激活验证码。
+- 请登录后台管理系统；
+- 打开【设备管理】；
+- 输入设备播报的验证码，完成激活绑定。
+- 刚绑定的设备，未关联相应的智能体，请使用设备的修改功能，管理具体的智能体信息。
+
+✅ 完成以上步骤，即可开始使用小智语音交互与控制服务。

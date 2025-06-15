@@ -4,7 +4,7 @@
 
 <p align="center">
 本项目为开源智能硬件项目
-<a href="https://github.com/78/xiaozhi-esp32" target="_blank">xiaozhi-esp32</a>提供后端服务<br/>
+<a href="https://github.com/78/xiaozhi-esp32" target="_blank">xiaozhi-esp32</a>提供Java后端服务<br/>
 根据<a href="https://github.com/78/xiaozhi-esp32/blob/main/docs/websocket.md" target="_blank">小智WebSocket通信协议</a>使用RuoYi-Vue、Spring AI、轻量级Java-WebSocket、ffmpeg实现<br/>
 帮助您快速搭建小智服务器
 </p>

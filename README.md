@@ -31,7 +31,7 @@
     <img alt="GitHub pull requests" src="https://img.shields.io/badge/license-MIT-white?labelColor=black" />
   </a>
   <a href="https://github.com/dbcjl/RuoYi-xiaozhi">
-    <img alt="stars" src="https://img.shields.io/github/stars/dbcjl/RuoYi-xiaozhi?color=ffcb47&labelColor=black" />
+    <img alt="stars" src="https://img.shields.io/github/stars/dbcjl/RuoYi-xiaozhi?color=ffab47&labelColor=black" />
   </a>
 </p>
 

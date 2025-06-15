@@ -11,7 +11,7 @@
 
 <p align="center">
 <a href="https://github.com/dbcjl/RuoYi-xiaozhi/issues" target="_blank">反馈问题</a>
-· <a href="./README.md#部署文档" target="_blank">部署文档</a>
+· <a href="./README.md#项目部署" target="_blank">项目部署</a>
 · <a href="https://github.com/dbcjl/RuoYi-xiaozhi/releases" target="_blank">更新日志</a>
 </p>
 <p align="center">

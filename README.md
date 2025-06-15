@@ -4,15 +4,15 @@
 
 <p align="center">
 本项目为开源智能硬件项目
-<a href="https://github.com/78/xiaozhi-esp32">xiaozhi-esp32</a>提供后端服务<br/>
-根据<a href="https://github.com/78/xiaozhi-esp32/blob/main/docs/websocket.md">小智WebSocket通信协议</a>使用RuoYi-Vue、Spring AI、轻量级Java-WebSocket、ffmpeg实现<br/>
+<a href="https://github.com/78/xiaozhi-esp32" target="_blank">xiaozhi-esp32</a>提供后端服务<br/>
+根据<a href="https://github.com/78/xiaozhi-esp32/blob/main/docs/websocket.md" target="_blank">小智WebSocket通信协议</a>使用RuoYi-Vue、Spring AI、轻量级Java-WebSocket、ffmpeg实现<br/>
 帮助您快速搭建小智服务器
 </p>
 
 <p align="center">
-<a href="https://github.com/dbcjl/RuoYi-xiaozhi/issues">反馈问题</a>
-· <a href="./README.md#部署文档">部署文档</a>
-· <a href="https://github.com/dbcjl/RuoYi-xiaozhi/releases">更新日志</a>
+<a href="https://github.com/dbcjl/RuoYi-xiaozhi/issues" target="_blank">反馈问题</a>
+· <a href="./README.md#部署文档" target="_blank">部署文档</a>
+· <a href="https://github.com/dbcjl/RuoYi-xiaozhi/releases" target="_blank">更新日志</a>
 </p>
 <p align="center">
   <a href="https://github.com/dbcjl/RuoYi-xiaozhi/releases">
@@ -49,7 +49,7 @@
 ## 二、项目技术栈
 
 - **后端框架**：RuoYi-Vue 后端子项目（Spring Boot）
-- **通信协议**：[小智 WebSocket 通信协议](https://github.com/78/xiaozhi-esp32/blob/main/docs/websocket.md)
+- **通信协议**：<a href="https://github.com/78/xiaozhi-esp32/blob/main/docs/websocket.md" target="_blank">小智 WebSocket 通信协议</a>
 - **WebSocket 库**：Java-WebSocket（轻量级嵌入式服务）
 - **AI 接口**：Spring AI（OpenAI / 百度 / 阿里等大模型接入）
 - **音视频处理**：JavaCV-FFmpeg（音频编码、格式转换等）

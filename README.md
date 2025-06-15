@@ -40,11 +40,11 @@
 ## 一、系统要求
 
 - 操作系统：Linux / macOS / Windows
-- Java 版本：**Java 21**
+- Java 版本：**azul-Java 21**
 - Maven 版本：建议使用 **Apache Maven 3.8+**
 - Node.js（仅用于前端模块编译）：**Node.js 18+**
 
-> 备注：本项目基于 **Java 21** 开发，主要为了使用 **虚拟线程（Virtual Threads）** 提升聊天服务的并发处理能力。相比传统线程，虚拟线程更轻量，可显著提高系统吞吐量和响应性能。
+> 备注：本项目基于 **azul-Java 21** 开发，主要为了使用 **虚拟线程（Virtual Threads）** 提升聊天服务的并发处理能力。相比传统线程，虚拟线程更轻量，可显著提高系统吞吐量和响应性能。
 
 ## 二、项目技术栈
 
@@ -192,6 +192,7 @@ npm install --registry=https://registry.npmmirror.com
 # 启动前端服务（默认 80 端口）
 npm run dev
 ```
+> 备注：本项目后端使用 Java 21，必须使用 Azul Zulu 版本（azul-21）。
 
 访问地址：http://localhost
 默认账号密码：admin / admin123

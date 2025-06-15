@@ -1,0 +1,27 @@
+spring:
+  main:
+    web-application-type: none
+# 小智聊天服务配置
+chat:
+  server:
+    port: 8082
+    context-path: /server/v1
+logging:
+  pattern:
+    # 日志日期格式
+    dateformat: yyyy-MM-dd HH:mm:ss.SSS
+  level:
+    org.springframework.ai.tool: DEBUG
+# 模型配置
+model:
+  asr:
+    # sense-voice配置
+    sense-voice:
+      # 这个换成本地的模型路径
+      model-dir: /xxx/xxxx/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17
+      num-threads: 4
+  tts:
+    # 火山TTS
+    volc-tts:
+      appid:
+      access-token:

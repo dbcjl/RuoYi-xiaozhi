@@ -1,0 +1,17 @@
+package ${packageName}.mapper;
+
+import com.rouyi.xiaozhi.common.core.mapper.CommonMapper;
+import ${packageName}.domain.${ClassName};
+#if($table.sub)
+import ${packageName}.domain.${subClassName};
+#end
+
+/**
+ * ${functionName}Mapper接口
+ *
+ * @author ${author}
+ * @date ${datetime}
+ */
+public interface ${ClassName}Mapper extends CommonMapper<${ClassName}> {
+
+}

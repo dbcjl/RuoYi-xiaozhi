@@ -1,0 +1,1 @@
+pnpm install --registry=https://registry.npmmirror.com

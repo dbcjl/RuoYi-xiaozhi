@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 
 /**
  * 设备管理Service业务层处理
- * 
+ *
  * @author ruoyi-xiaozhi
  */
 @Slf4j
@@ -49,7 +49,7 @@ public class DeviceServiceImpl implements IDeviceService {
 
     /**
      * 查询设备管理
-     * 
+     *
      * @param id 设备管理主键
      * @return 设备管理
      */
@@ -60,7 +60,7 @@ public class DeviceServiceImpl implements IDeviceService {
 
     /**
      * 查询设备管理列表
-     * 
+     *
      * @param device 设备管理
      * @return 设备管理
      */
@@ -78,7 +78,7 @@ public class DeviceServiceImpl implements IDeviceService {
 
     /**
      * 修改设备管理
-     * 
+     *
      * @param device 设备管理
      * @return 结果
      */
@@ -89,7 +89,7 @@ public class DeviceServiceImpl implements IDeviceService {
 
     /**
      * 批量删除设备管理
-     * 
+     *
      * @param ids 需要删除的设备管理主键
      * @return 结果
      */
@@ -129,7 +129,7 @@ public class DeviceServiceImpl implements IDeviceService {
             response.setActivation(activation);
         }else {
             DeviceReportVO.Websocket websocket = new DeviceReportVO.Websocket();
-            websocket.setUrl("ws://" + NetUtil.getLocalhost().getHostAddress() +":8082/server/v1");
+            websocket.setUrl("ws://" + NetUtil.getLocalhost().getHostAddress() +":8082/xiaozhi/v1");
             response.setWebsocket(websocket);
         }
         return response;

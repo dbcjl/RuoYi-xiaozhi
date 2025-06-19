@@ -16,6 +16,6 @@ public class ChatServerProperties {
     private Integer port = 8080;
 
     /** 聊天服务上下文路径 */
-    private String contextPath = "/server/v1";
+    private String contextPath = "/xiaozhi/v1";
 
 }
